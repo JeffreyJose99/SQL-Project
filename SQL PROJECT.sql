@@ -1,7 +1,5 @@
-----Group Final Project (Group No.13)
-----Group Members [Divyansh Bhardwaj (200517423)], [Jeffery Jose (200521810)], Shubham Thapliyal (200517090)
 
--- 1. Create a database called ìLMT_Universityî.
+-- 1. Create a database called ‚ÄúLMT_University‚Äù.
 
 CREATE DATABASE LMT_University;
 
@@ -9,7 +7,7 @@ CREATE DATABASE LMT_University;
 
 use LMT_University;
 
--- Create an ìenrolî schema under ìLMT_Universityî.
+-- Create an ‚Äúenrol‚Äù schema under ‚ÄúLMT_University‚Äù.
 
 CREATE SCHEMA enrol;
 
@@ -76,9 +74,9 @@ insert into enrol.department select 'AEIE', 'Applied Electronics and Instrumenta
 
 --------------------------------------------------------------------------------------------------------------------
 
-insert into enrol.Address Select '	5 Schurz Lane	','	GrybÛw	','	NULL','	33-330	','	Poland	', 	GetDate()
+insert into enrol.Address Select '	5 Schurz Lane	','	Gryb√≥w	','	NULL','	33-330	','	Poland	', 	GetDate()
 insert into enrol.Address Select '	628 Waubesa Drive	','	Jinsheng	','	NULL','	NULL	','	China	', 	GetDate()
-insert into enrol.Address Select '	44135 Northfield Way	','	Nowy DwÛr Mazowiecki','	NULL	','	05-160	','	Poland	', 	GetDate()
+insert into enrol.Address Select '	44135 Northfield Way	','	Nowy Dw√≥r Mazowiecki','	NULL	','	05-160	','	Poland	', 	GetDate()
 insert into enrol.Address Select '	335 Bellgrove Road	','	Gaoqiao	','	NULL	','	NULL','	China	', 	GetDate()
 insert into enrol.Address Select '	28 Victoria Junction	','	Bukovec	','	NULL	','	739 84	','	Czech Republic	', 	GetDate()
 insert into enrol.Address Select '	6 Stuart Road	','	Wushan	','	NULL	','	NULL	','	China	', 	GetDate()
@@ -95,15 +93,15 @@ insert into enrol.Address Select '	234 Hagan Lane	','	Rennes	','	Bretagne	','	35
 insert into enrol.Address Select '	33942 Eagle Crest Trail	','	Oliveiras	','	Porto','	4745-235	','	Portugal	', 	GetDate()
 insert into enrol.Address Select '	20791 Hermina Way	','	B?o L?c	','	NULL	','	NULL	','	Vietnam	', 	GetDate()
 insert into enrol.Address Select '	86 Lake View Way	','	Marsa Alam	','	NULL	','	NULL	','	Egypt	', 	GetDate()
-insert into enrol.Address Select '	19732 Burning Wood Parkway	','	PiteÂ	','	Norrbotten	','	944 73	','	Sweden	', 	GetDate()
+insert into enrol.Address Select '	19732 Burning Wood Parkway	','	Pite√•	','	Norrbotten	','	944 73	','	Sweden	', 	GetDate()
 insert into enrol.Address Select '	9320 Oak Valley Road	','	Rathangani	','	NULL	','	A45	','	Ireland	', 	GetDate()
 insert into enrol.Address Select '	2638 Waubesa Circle	','	Honda	','	NULL	','	732048	','	Colombia	', 	GetDate()
 insert into enrol.Address Select '	6999 Monument Center	','	Cortes	','	NULL	','	6341	','	Philippines	', 	GetDate()
 insert into enrol.Address Select '	1 Warbler Hill	','	Proletar	','	NULL	','	NULL	','	Tajikistan	', 	GetDate()
 insert into enrol.Address Select '	1311 Crowley Street	','	Baghlan	','	NULL	','	NULL	','	Afghanistan	', 	GetDate()
-insert into enrol.Address Select '	19 Walton Way	','	÷ldziyt	','	NULL	','	NULL	','	Mongolia	', 	GetDate()
-insert into enrol.Address Select '	1 Glacier Hill	','	Cergy-Pontoise	','	Œle-de-France	','	95304	','	France	', 	GetDate()
-insert into enrol.Address Select '	5094 Gateway Way	','	éivinice	','	NULL	','	NULL	','	Bosnia and Herzegovina	', 	GetDate()
+insert into enrol.Address Select '	19 Walton Way	','	√ñldziyt	','	NULL	','	NULL	','	Mongolia	', 	GetDate()
+insert into enrol.Address Select '	1 Glacier Hill	','	Cergy-Pontoise	','	√éle-de-France	','	95304	','	France	', 	GetDate()
+insert into enrol.Address Select '	5094 Gateway Way	','	≈Ωivinice	','	NULL	','	NULL	','	Bosnia and Herzegovina	', 	GetDate()
 insert into enrol.Address Select '	2 Roth Pass	','	Tuatuka	','	NULL	','	NULL	','	Indonesia	', 	GetDate()
 insert into enrol.Address Select '	89531 Northview Road	','	Ganyi	','	NULL	','	NULL	','	China	', 	GetDate()
 
@@ -180,7 +178,7 @@ SELECT * FROM enrol.Lecturer;
 -- d.	List all the Address information from the Address table.
 SELECT * FROM enrol.Address;
 
--- e.e.	List the StudentFullName, StudentDOB, StudentMobile from Student [StudentFullName=StudentFirstName + ë  ë + StudentLastName]
+-- e.e.	List the StudentFullName, StudentDOB, StudentMobile from Student [StudentFullName=StudentFirstName + ‚Äò  ‚Äò + StudentLastName]
 SELECT StudentFirstName + ' ' + StudentLastName as StudentFullName, StudentMob, StudentDOB FROM enrol.Student;
 
 -- f.f.	List the StudentID, StudentFirstName, StudentLastName, StudentDOB, StudentMobile from Student in AddressID 7.
@@ -195,30 +193,30 @@ SELECT StudentFirstName + ' ' + StudentLastName as StudentFullName, StudentMob, 
  -- I. i.	Count the number of Student from Student table whose DepartmentID 6.
  SELECT COUNT(*) Cnt FROM enrol.Student where DepartmentId = 6
 
- -- J.	List all the StudentFullName, StudentAge, StudentMobile from Student [StudentFullName= StudentFirstName + ë  ë + StudentLastName] [StudentAge= Current date ñ DOB (in Years)]
+ -- J.	List all the StudentFullName, StudentAge, StudentMobile from Student [StudentFullName= StudentFirstName + ‚Äò  ‚Äò + StudentLastName] [StudentAge= Current date ‚Äì DOB (in Years)]
  SELECT  StudentFirstName + ' ' + StudentLastName as StudentFullName,  DATEDIFF(hour,STUDENTDOB,GETDATE())/8766 AS StudentAge , StudentMob from enrol.Student 
 
- -- K.	List all the StudentFullName, StudentAge, StudentMobile whose Age>23 from Student [StudentFullName= StudentFirstName + ë  ë + StudentLastName] [StudentAge= Current date ñ DOB (in Years)]
+ -- K.	List all the StudentFullName, StudentAge, StudentMobile whose Age>23 from Student [StudentFullName= StudentFirstName + ‚Äò  ‚Äò + StudentLastName] [StudentAge= Current date ‚Äì DOB (in Years)]
  SELECT  StudentFirstName + ' ' + StudentLastName as StudentFullName,  DATEDIFF(hour,STUDENTDOB,GETDATE())/8766 AS StudentAge , StudentMob from enrol.Student 
  WHERE DATEDIFF(hour,STUDENTDOB,GETDATE())/8766 > 23
 
- -- L.	List all the StudentFullName, StudentAge, StudentMobile whose Age is either 21 or 23 from Student [StudentFullName= StudentFirstName + ë  ë + StudentLastName] [StudentAge= Current date ñ DOB (in Years)]
+ -- L.	List all the StudentFullName, StudentAge, StudentMobile whose Age is either 21 or 23 from Student [StudentFullName= StudentFirstName + ‚Äò  ‚Äò + StudentLastName] [StudentAge= Current date ‚Äì DOB (in Years)]
  SELECT  StudentFirstName + ' ' + StudentLastName as StudentFullName,  DATEDIFF(hour,STUDENTDOB,GETDATE())/8766 AS StudentAge , StudentMob from enrol.Student 
  WHERE DATEDIFF(hour,STUDENTDOB,GETDATE())/8766 IN ( 21, 23)
 
  -- M. List all the LecturerID, LecturerName, LecturerHighestQualification, LecturerAge from Lecturer.
  SELECT LecturerID, LecturerName, LecturerHighestQualification, LectureAge from enrol.Lecturer 
 
- -- N. List all the LecturerID, LecturerName, LecturerHighestQualification, LecturerAge from Lecturer whose HighestQualification is either ìMSî or ìPhDî.
+ -- N. List all the LecturerID, LecturerName, LecturerHighestQualification, LecturerAge from Lecturer whose HighestQualification is either ‚ÄúMS‚Äù or ‚ÄúPhD‚Äù.
  SELECT LecturerID, LecturerName, LecturerHighestQualification, LectureAge from enrol.Lecturer WHERE LecturerHighestQualification  IN ('MS','PhD') 
 
  -- O. List all the lecturer information who belongs to DepartmentID 2.
  SELECT * from enrol.Lecturer WHERE DepartmentId = 2;
 
- -- P. List all the lecturer information whose name end with ìRî.
+ -- P. List all the lecturer information whose name end with ‚ÄúR‚Äù.
  SELECT * from enrol.Lecturer WHERE LecturerName LIKE '%R'
 
- -- Q. List all the lecturer information whose name either start or end with ìEî.
+ -- Q. List all the lecturer information whose name either start or end with ‚ÄúE‚Äù.
  SELECT * from enrol.Lecturer WHERE LecturerName LIKE '%E' OR LecturerName LIKE 'E%'
 
  -- R. List all the lecturer name is in capital letter.
@@ -227,13 +225,13 @@ SELECT StudentFirstName + ' ' + StudentLastName as StudentFullName, StudentMob, 
  -- S. Display 5 character from the lecturer name along with LecturerID and LecturerHighestQualification.
  SELECT LecturerID, SUBSTRING (LecturerName, 1, 5) LecturerName, LecturerHighestQualification, LectureAge from enrol.Lecturer 
 
- -- T. List LecturerID, LecturerName, LecturerHighestQualification, LecturerAge(in year) [LecturerAge= Current Date ñ LecturerAge)] (in year).
+ -- T. List LecturerID, LecturerName, LecturerHighestQualification, LecturerAge(in year) [LecturerAge= Current Date ‚Äì LecturerAge)] (in year).
  SELECT LecturerID, LecturerName, LecturerHighestQualification, DATEDIFF(hour,LectureAge,GETDATE())/8766 AS LecturerAge from enrol.Lecturer 
 
  -- U. List DepartmentID, DepartmentName, DepartmentDescription, DepartmentCapacity from Department.
  SELECT DepartmentID, DepartmentName, DepartmentDesc, DepartmentCap from enrol.Department
 
- -- V. List all the Department information whoís DepartmentName is ìECEî.
+ -- V. List all the Department information who‚Äôs DepartmentName is ‚ÄúECE‚Äù.
  SELECT DepartmentDesc from enrol.Department where DepartmentName =  'ECE'
 
  -- W. List all DepartmentName, DepartmentDescription, DepartmentCapacity from Department whose capacity is greater than 60.
@@ -242,7 +240,7 @@ SELECT StudentFirstName + ' ' + StudentLastName as StudentFullName, StudentMob, 
  -- X. List all AddressID, StreetAddress, City, State, PostalCode, Country from Address.
  select AddressID, StreetAddress, City, State, PostalCode, Country from enrol.Address 
 
- -- Y. List all AddressID, StreetAddress, City, State, PostalCode, Country from Address who belongs to ìPolandî country.
+ -- Y. List all AddressID, StreetAddress, City, State, PostalCode, Country from Address who belongs to ‚ÄúPoland‚Äù country.
  select AddressID, StreetAddress, City, State, PostalCode, Country from enrol.Address where Country = 'Poland'
 
  -- Z. List all the Address information whose state is null.
@@ -274,7 +272,7 @@ SELECT distinct State from enrol.Address
 --e. List unique City name from Address.
 SELECT distinct City from enrol.Address
 
---f. List all the LecturerID, LecturerName, LecturerHighestQualification, LecturerYearService from Lecturer [LecturerYearService= Current Date ñ LecturerAge] (in year).
+--f. List all the LecturerID, LecturerName, LecturerHighestQualification, LecturerYearService from Lecturer [LecturerYearService= Current Date ‚Äì LecturerAge] (in year).
 SELECT LecturerID, LecturerName, LecturerHighestQualification, DATEDIFF(hour,LectureAge,GETDATE())/8766 LecturerYearService from ENROL.Lecturer 
 
 --g. List all the LecturerID, LecturerName, LecturerHighestQualification, LecturerType from Lecturer [LecturerType= if LecturerYearService< 5 then "Begining Level Experience" else if LecturerYearService>= 5 and LecturerYearService<10 then "Mid Level experience" else "Experienced".
@@ -315,7 +313,7 @@ and a.DepartmentId = c.DepartmentId
 and a.DepartmentId = d.DepartmentId
 order by a.StudentFirstName, DepartmentName, LecturerName
 
---G. Display all Student with Address, Department and Lecturer Information who belongs to either ìMEî or ìECEî department.
+--G. Display all Student with Address, Department and Lecturer Information who belongs to either ‚ÄúME‚Äù or ‚ÄúECE‚Äù department.
 select a.StudentFirstName + '' + a.StudentLastName AS STUDENT, d.LecturerName, c.DepartmentName, b.StreetAddress + ' , ' + b.City + ' , ' + b.Country
 from enrol.Student a , enrol.Address b, enrol.Department c, enrol.Lecturer d
 where a.AddressId = b.AddressId
@@ -324,7 +322,7 @@ and a.DepartmentId = d.DepartmentId
 and DepartmentName in ('ME','ECE')
 order by a.StudentFirstName, DepartmentName, LecturerName
 
---H. Display Student with Department and their Lecturer information based on the LecturerHighestQualification either ìMSî or ìPhDî.
+--H. Display Student with Department and their Lecturer information based on the LecturerHighestQualification either ‚ÄúMS‚Äù or ‚ÄúPhD‚Äù.
 select a.StudentFirstName + '' + a.StudentLastName AS STUDENT, LecturerHighestQualification, d.LecturerName, c.DepartmentName, b.StreetAddress + ' , ' + b.City + ' , ' + b.Country as address
 from enrol.Student a , enrol.Address b, enrol.Department c, enrol.Lecturer d
 where a.AddressId = b.AddressId
@@ -333,7 +331,7 @@ and a.DepartmentId = d.DepartmentId
 and LecturerHighestQualification IN ('MS','PhD')
 order by a.StudentFirstName, DepartmentName, LecturerName
 
---I.	Display Student with Department and Address Information, where student belongs to ìThailandî country.
+--I.	Display Student with Department and Address Information, where student belongs to ‚ÄúThailand‚Äù country.
 select a.StudentFirstName + '' + a.StudentLastName AS STUDENT, LecturerHighestQualification, d.LecturerName, c.DepartmentName, b.StreetAddress + ' , ' + b.City + ' , ' + b.Country as address
 from enrol.Student a , enrol.Address b, enrol.Department c, enrol.Lecturer d
 where a.AddressId = b.AddressId
@@ -395,35 +393,35 @@ from enrol.Lecturer ;
 --a.	Delete all the records from LecturerCopy table.
 delete from enrol.LecturerCopy ;
 
---b.	Delete all the student information for the students who belong to ìITî department.
+--b.	Delete all the student information for the students who belong to ‚ÄúIT‚Äù department.
 delete from enrol.Student where DepartmentId = (select departmentid from enrol.Department where DepartmentName = 'IT') ;
 
---c.	Delete all the student information for the students who belong to ìIndonesiaî country.
+--c.	Delete all the student information for the students who belong to ‚ÄúIndonesia‚Äù country.
 delete from enrol.Student where AddressId = (select AddressId from enrol.Address where Country = 'Indonesia') ;
 
---d.	Delete all the student information for the student who belongs to ìNanshiî city.
+--d.	Delete all the student information for the student who belongs to ‚ÄúNanshi‚Äù city.
 delete from enrol.Student where AddressId = (select AddressId from enrol.Address where City = 'Nanshi') ;
 
---e.	Delete all the student information for the student who belongs to ìBretagneî state.
+--e.	Delete all the student information for the student who belongs to ‚ÄúBretagne‚Äù state.
 delete from enrol.Student where AddressId = (select AddressId from enrol.Address where State = 'Bretagne') ;
 
 ------------------------------------------------------------------------------------------------------------------
 
 --14.	Write the following Query based on the above datasets.
 
---a.	Update StudentMobile for those students who belongs to Department ìMEî.
+--a.	Update StudentMobile for those students who belongs to Department ‚ÄúME‚Äù.
 UPDATE enrol.Student  SET StudentMob = '' where DepartmentId = (select departmentid from enrol.Department where DepartmentName = 'ME') 
 
 --b.	Update Student DepartmentID as 3, for the StudentID=42.
 UPDATE enrol.Student  SET DepartmentId = 3 where StudentId = 42 
 
---c.	Update LecturerHighestQualification as ìPHdî for the Lecturer whose LecturerHighestQualification= ìPhDî.
+--c.	Update LecturerHighestQualification as ‚ÄúPHd‚Äù for the Lecturer whose LecturerHighestQualification= ‚ÄúPhD‚Äù.
 update enrol.Lecturer set LecturerHighestQualification = 'PHd' where LecturerHighestQualification = 'PhD'
 
---d.	Update PostalCode as ì00000î for the Address which contain NULL as a PostalCode.
+--d.	Update PostalCode as ‚Äú00000‚Äù for the Address which contain NULL as a PostalCode.
 update enrol.Address set PostalCode = '00000' where PostalCode is null
 
---e.	Update StudentLastName as ìPaulî for the Student whose Name is ìJerryî.
+--e.	Update StudentLastName as ‚ÄúPaul‚Äù for the Student whose Name is ‚ÄúJerry‚Äù.
 update enrol.StudCopy set StudentLastName = 'Paul' where StudentFirstName = 'Jerry'
 
 ------------------------------------------------------------------------------------------------------------------------------------------
